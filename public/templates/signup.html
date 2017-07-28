@@ -1,0 +1,63 @@
+<ion-view hide-nav-bar="true">
+    <ion-content class="content-cls">
+        <div class="row">
+            <div class="col text-center">
+                <img src="img/logo.png" class="logo-img"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="list list-pad">
+                    <label class="item item-input form-input-login border-top-login">
+                        <img src="img/person.png" width="16"/>
+                        <input class="form-icon-login fs-16" type="text" ng-model="user.first_name" placeholder="First Name">
+                    </label>
+                    <label class="item item-input form-input-login">
+                        <img src="img/person.png" width="16" />
+                        <input class="form-icon-login fs-16" type="text" ng-model="user.last_name" placeholder="Last Name">
+                    </label>
+                    <label class="item item-input form-input-login">
+                        <img src="img/mail.png" width="18" />
+                        <input class="form-icon-login fs-16" type="Email" ng-model="user.email" placeholder="Email">
+                    </label>
+                    <label class="item item-input form-input-login">
+                        <img src="img/lock.png" width="15" />
+                        <input class="form-icon-login fs-16" type="Password" ng-model="user.password" placeholder="Password">
+                    </label>
+                    <label class="item item-input form-input-login">
+                        <img src="img/country.png" width="18" />
+                        <input class="form-icon-login fs-16" type="text" ng-model="user.country" placeholder="Country">
+                    </label> 
+                  
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div class="cen">
+            <ion-checkbox class="border-none" style="color:#b3b3b3">
+             I accept the Terms And Condition
+            </ion-checkbox>
+        </div> -->
+
+        <div class="row form-btn-top">
+                <div class="col sign-in-col">
+                    <button class="sign-in-btn button button-balanced button-full text-center" ng-click="registerUser(user)" style="font-size: 22px;"  >Next</button>
+                </div>
+            </div>
+        <!-- <div class="row form-btn-top ">
+                <div class="col sign-in-col">
+                    <button class="sign-up-btn button border-radi-0 wid100 fs-24 text-center" ui-sref="tab.dashProperty">Signup</button>
+                </div>
+        </div> -->
+
+        <div class="row form-btn-top ">
+                <div class="col text-center fs-20 text-clr-grey" ui-sref="login" >
+                    Log in
+                </div>
+        </div>
+           
+      
+    </ion-content>
+    
+</ion-view>

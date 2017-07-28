@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hamburgers by Jonathan Suh</title>
+  <link rel="stylesheet" href="hamburgers.css">
+  <style>
+    code {
+      display: inline-block;
+    }
+
+    code,
+    .hamburger {
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  
+
+  <div class="hamburger hamburger--collapse">
+    <div class="hamburger-box">
+      <div class="hamburger-inner"></div>
+    </div>
+  </div>
+  <code>hamburger--collapse</code>
+
+  
+
+  <script>
+ 
+    var forEach=function(t,o,r){if("[object Object]"===Object.prototype.toString.call(t))for(var c in t)Object.prototype.hasOwnProperty.call(t,c)&&o.call(r,t[c],c,t);else for(var e=0,l=t.length;l>e;e++)o.call(r,t[e],e,t)};
+
+    var hamburgers = document.querySelectorAll(".hamburger");
+    if (hamburgers.length > 0) {
+      forEach(hamburgers, function(hamburger) {
+        hamburger.addEventListener("click", function() {
+          this.classList.toggle("is-active");
+        }, false);
+      });
+    }
+  </script>
+</body>
+</html>

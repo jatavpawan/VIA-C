@@ -1,0 +1,15 @@
+﻿
+<ion-modal-view class="modal_cust">
+    <ion-header-bar align-title="center">
+        <h1 class="title">{{title}}</h1>
+    </ion-header-bar>
+    <ion-content scroll="false">
+        <div style="margin-top:50px">
+            <h5 class="modal_h4 " ng-bind-html="trustAsHtml(message)"></h5>
+        </div>
+        <div style="text-align: center;position: absolute;right: 29px;bottom: 102px;"><button ng-show="payNowShow" ngclipboard="" data-clipboard-text="{{paymentId}}" class=""><i class="icon ion-ios-copy" style="font-size:20px"></i></button></div>
+        <div class="btn_div">
+            <center> <button class="button button-small hdr-btn-clr btn_ok" ng-click="closeModal(payNowShow)">Ok</button></center> 
+        </div>
+    </ion-content>
+</ion-modal-view>

@@ -1,0 +1,231 @@
+<ion-view>
+
+<div class="bar bar-subheader " ui-sref="tab.dashProperty" style="background-color: #33b9b1;font-weight:lighter ">
+  <h5 style="padding-left: 10px;color: white;font-size: 12px;">< Back to Listings</h5>
+</div>
+
+  <ion-content has-bouncing="false" style="overflow-y: scroll;" class="has-subheader container-padding property-detail-top">
+
+      <div class="big_devices_building property-detail-top">
+         
+          <div class="row bar-subheader" style="background-color: black;
+    opacity: 0.6;
+    color: white;
+    height: 40px;
+    position: absolute;
+    top: 0px;">
+              <div class="propert_name" style="opacity:1;top: 19px;left: 43px;"><p>{{data.property_description_address}}</p></div>
+              <div class="col col-60 text-left">
+                  <img style="float:left" src="img/clock.png" width="20" />&nbsp;&nbsp;&nbsp;&nbsp;<p style="color:white;float:left;padding-left:15px;line-height: 0.4;">{{data.ending_time}} days remaining</p>
+              </div>
+              <div class="col text-right">
+                  <!--<lab
+                  el>
+                    {{data.city}}, {{data.province}}
+                </label>-->
+                  <img src="img/people.png" width="20" />&nbsp;&nbsp;&nbsp;<label>{{data.investors.length}} investors</label>
+              </div>
+          </div>
+          <div class="building" style="background-image:url({{data.image_url}});margin-top: 0px;display: flex;">
+
+          <div class="row row-no-padding" style="height: 40px;opacity: 0.8;
+    align-self: flex-end;">
+              <div class="col col-66 row-no-padding text-left sign-in-btn " style="color:white;max-width:{{data.percentAmountInvested}}%">
+                  <label class="txt-posii-top" style="text-align: left;
+    padding-left: 5px;">{{data.percentAmountInvested}}%</label>
+              </div>
+              <div class="col col row-no-padding text-right" style="background-color:black;color:white">
+                  <label class="txt-posii-top" style="padding-right: 20px;">${{data.funding_amount}}</label>
+              </div>
+          </div>
+          </div>
+          <div class="row" style="margin-top:10px">
+              <div class="col col-25 text-center">
+                  <img src="img/calclendar.png" width="32" />
+              </div>
+              <div class="col col text-center">
+                  <img src="img/money.png" width="50" height="32" />
+              </div>
+              <div class="col col-25 text-center">
+                  <img src="img/stats.png" width="38" height="31" />
+              </div>
+          </div>
+          <div class="row text-center row-no-padding">
+              <div class="col col-25 row-no-padding">
+                  <p style="font-size:12px">{{data.term}} Months <br /><span class="blue_color">Term</span></p>
+              </div>
+              <div class="col row-no-padding">
+                  <p style="font-size:12px">${{data.min_invest_amount}} +<span> $50 Admin Fees</span><br /><span class="blue_color"> Minimum Investment</span></p>
+              </div>
+              <div class="col col-25 row-no-padding">
+                  <p style="font-size:12px"> {{data.anual_return}}% (Est.)<br /><span class="blue_color">ROI Per Annum</span></p>
+              </div>
+          </div>
+          <!--<div class="row" style="margin-top:10px">
+              <div class="col col-33 text-center">
+                  <img src="img/calclendar.png" width="32" />
+              </div>
+              <div class="col col-33 text-center">
+                  <img src="img/money.png" width="50" height="32" />
+              </div>
+              <div class="col col-33 text-center">
+                  <img src="img/stats.png" width="38" height="31" />
+              </div>
+          </div>
+          <div class="row text-center row-no-padding">
+              <div class="col col-33 row-no-padding">
+                  <p style="font-size:12px">{{data.term}} Month Term</p>
+              </div>
+              <div class="col col-33 row-no-padding">
+                  <p style="font-size:12px">${{data.min_invest_amount}} +<span> $50 Admin Fees</span><br /> Minimum Investment</p>
+              </div>
+              <div class="col col-33 row-no-padding">
+                  <p style="font-size:12px"> {{data.anual_return}}% (est.)<br /> Per Annum</p>
+              </div>
+          </div>-->
+
+      </div>
+        <div>
+
+
+            <div style="font-size: 15px;      padding-right: 30px !important;  padding: 12px; padding-top:12px">
+                <p style="font-weight: bold;">Property Description & Highlights</p>
+                <p>{{data.property_description_address}}</p>
+                <p>
+                    {{data.property_description}}
+                </p>
+                <!--<p>Pellentesque habitant morbi tristique senecs
+            et netus et malesuada fames ac turpis egess.
+            Nunc interdum, nunc a laoreet mollis, purus
+            dolor facilisis ligula, accumsan viverra orci felis
+            vitae elit. Donec congue libero tellus, in luctus
+            eros tincidunt nec. Integer in finibus lorem.
+            </p>-->
+
+                <p style="font-weight:bold">Property Strategy</p>
+                <p>
+                    Growth Pool has access to purchase units in
+
+                    {{data.property_strategy_city}} at VIP pricing and plans to assign the
+
+                    units in 24 to 36 months after purchase.
+                </p>
+                <p>
+                    Profits or losses will be shared amongst
+
+                    investors respective to percentage ownership
+
+                    minus legal fees, closing costs, realtor fees,
+
+                    land transfer costs, and all carrying costs.
+                </p>
+                <p>
+                    Disclaimer: All costs and prices are estimated
+
+                    and may increase or decrease based on actual
+
+                    costs and final sale price. All service costs are
+
+                    subject to HST and have been estimated in the
+
+                    calculations. Growth Pool reserves the right
+
+                    to complete the funding if needed.
+                </p>
+                <p>
+                    Note: Any profits are subject to Revenue
+
+                    Canada's rules and regulations concerning
+
+                    Capital Gains and HST . The member is
+
+                    responsible for complying and submitting on
+
+                    their own behalf. Growth Pool will not be
+
+                    responsible for any HST arising from a
+
+                    members profit or acquisition cost. Upon sale
+
+                    of the property Growth Pool shall not pay more
+
+                    than the 5% industry accepted real estate
+
+                    commissions.
+                </p>
+            </div>
+            <div class="row_logos">
+                <div class="row align_logos">
+                    <div class="col col-20"><img src="img/buildinglogo.PNG" style="width: 80%;"></div>
+                    <div class="col col-30 fs_12">Ownership Type <br />{{data.ownership_type}}</div>
+                    <div class="col col-20"><img src="img/propertysize.PNG" style="width: 80%;"></div>
+                    <div class="col col-30 fs_12">Property Size <br />{{data.property_size}}</div>
+                </div>
+                <br>
+                <div class="row align_row_2">
+                    <div class="col col-20"><img src="img/bedsproperty.PNG" style="width: 80%;"></div>
+                    <div class="col col-30 fs_12">Beds <br />{{data.beds}}</div>
+                    <div class="col col-20"><img src="img/bathfacility.PNG" style="width: 80%;"></div>
+                    <div class="col col-30 fs_12">Bath<br />{{data.baths}}</div>
+                </div>
+            </div>
+          
+
+            <div class="list text-center ">
+                <div class="text-center" style="margin-top: 26px;">
+                    <p style="font-size: 18px;">Like This Property</p>
+                </div>
+                <div class="text-center" style="margin-top: 26px;">
+                    <p style="font-size: 18px;">Investment Amount</p>
+                </div>
+                <br/>
+                <div class="row text-center">
+                    <div class="col col-50 text-right" style="max-width:46%;display:table;align-self:center;font-size:18px;color:#33b9b1">
+$
+                    </div>
+                    <div class="col col-50" style="padding-right:0px">
+                        <label class="">
+                            <input type="number" class="txt_box_center" ng-change="calculateProfit(data.Investment_amount)"  ng-model="data.Investment_amount" string-to-number/>
+                        </label>
+                    </div>
+
+
+                </div>
+                <p style="font-size: 18px;font-size: 20px;text-align: center;color: #33b9b1;    margin: 0px;"></p>
+                <center>
+                    <div class="item range range-positive no-padding" style="border: none;     max-width: 100%;">
+                        <p class="range_text_1">${{data.min_invest_amount}}</p>
+                        <input type="range" name="volume" min="{{data.min_invest_amount}}" ng-change="calculateProfit(data.Investment_amount)" max="{{data.totalInvestment}}" ng-model="data.Investment_amount">
+                        <p class="range_text_2">${{data.totalInvestment}}</p>
+                    </div>
+                </center>
+                <div>
+                    <p style="font-size: 18px;" class="blue1">{{data.ownership_percent}}%* <br> <span style="font-size: 14px;" class="grey01">% ownership</span></p>
+                    <p style="font-size: 18px;" class="blue1">${{data.estimated_return}}* <br> <span style="font-size: 14px;" class="grey01">Estimated Return</span></p>
+                    <p style="font-size: 16px;" class="blue1">{{data.term/12}} years <br> <span style="font-size: 14px;" class="grey01">Term</span></p>
+                </div>
+            </div>
+
+            <div class="row-no-padding">
+                <button class="sign-in-btn button button-balanced button-full text-center" ng-click="investNow()" style="margin:0px; font-size: 22px;">Invest Now</button>
+            </div>
+
+        </div>
+  
+     
+    
+
+  
+      
+ <!--  <div  class="item item-divider" style="background-color:#b3b3b3;">
+      <img style="float:left" src="img/clock.png" width="20"/>&nbsp;&nbsp;&nbsp;&nbsp;<p style="color:white;float:left;padding-left:15px">179 days 23 hours remaining</p>
+  </div> -->
+
+
+     
+  
+  </ion-content>
+   <!--  <ion-footer-bar class="row-no-padding">
+        <button class="sign-in-btn button button-balanced button-full text-center" style="margin:0px; font-size: 24px;"" ui-sref="tab.dash">Invest Now</button>
+    </ion-footer-bar> -->
+</ion-view>

@@ -1,0 +1,59 @@
+﻿<ion-view hide-nav-bar="true">
+    <ion-content class="content-cls container-padding">
+        <div class="row">
+            <div class="col text-center">
+                <img src="img/logo.png" class="logo-img"/>
+            </div>
+        </div>
+        <div>
+            <form ng-submit="signIn(user)">
+                <div class="row form-inputbox">
+                    <div class="col">
+                        <div class="list list-pad">
+                            <label class="item item-input form-input-login border-top-login">
+                                <!-- <i class="icon ion-search placeholder-icon"></i>-->
+                                <img src="img/person.png" width="18" />
+                                <input class="form-icon-login" type="text" ng-model="user.email" placeholder="Email" style="font-size: 20px;">
+                            </label>
+                            <label class="item item-input form-input-login">
+                                <img src="img/lock.png" width="18" />
+                                <input class="form-icon-login" type="password" ng-model="user.password" placeholder="Password" style="font-size: 20px;">
+                            </label>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row form-btn-top">
+                    <div class="col sign-in-col">
+                        <button class="sign-in-btn button button-balanced button-full text-center" type="submit" style="font-size: 22px;">Sign In</button>
+                    </div>
+                </div>
+            </form>
+
+            <!--  <div class="row">
+             <div class="col sign-in-col">ui-sref="tab.dashProperty"
+                 <button class="button button-balanced button-full sign-fb text-center">Sign In with Facebook</button>
+             </div>
+         </div>
+         <div class="row">
+             <div class="col sign-in-col">
+                 <button class="button button-balanced button-full sign-google">Sign In with Google</button>
+             </div>
+         </div> -->
+            <div class="row" style="margin-top: 110px;">
+                <div class="col text-center" style="color:white;font-size: 20px;" ui-sref="signup">
+                    Create an account
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center" style="color:white;font-size: 20px;">
+                    Forgot Password
+                </div>
+            </div>
+        </div>
+    </ion-content>
+ 
+    <div class="login-background" style="background-image:url('img/flowtingwater.png');background-size:cover;position:absolute;z-index:-1;width:100%;bottom:0px">
+    </div>
+</ion-view>

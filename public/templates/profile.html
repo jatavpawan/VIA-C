@@ -1,0 +1,131 @@
+<ion-view>
+  <ion-content  class="big_device_investment has-header">
+     <!--  <div class="row text-left" style="margin-top:20px">
+              <div class="col">
+                  <img src="img/imgpic.png" style="position: absolute;margin-left: 16px; max-width: 70px;z-index:2 ">
+              </div>
+              <div class="col text-right">
+                    <h4>Elliott Howard</h4>
+              </div>
+      </div>
+      <div class="row" style="position:absolute;height:44px;background-color:#33B9B1;color:white;z-index:0">  
+      </div> -->
+
+
+      <!--<div class="has-subheader" style="margin-top: 10px;padding: 45px;padding-bottom: 0px;padding-top: 0px;text-align:center;">
+            <p class="fs-14">Refer friends and family to wave your admin fees on your next investment.</p>
+            <button class="button btn-fx border-radi-0" style="width: 65%; font-size: 16px;">
+              Refer Now
+            </button>
+      </div>-->
+
+      <div class="list" >
+          <div class="row form-inputbox">
+            <div class="col">
+                <div class="list list-pad list_p">
+                    
+                <h4 style="padding-left: 14px;">Personal Details</h4>
+                    <div class="item item-input form-input-login border-top-login" >
+                        <input class="fs-12" type="text" placeholder="First Name" id="f_name" ng-model="data.first_name" ng-disabled="f_name">
+                        <span class="input-label edt-txt fs-12 text-clr-grey" ng-show="f_name" ng-click="changeModal('f_name')">Edit</span>
+                        <span class="input-label edt-txt fs-12 text-clr-grey" ng-show="!f_name" ng-click="saveData('f_name','first_name')">Save</span>
+                    </div>
+                    <div class="item item-input form-input-login"  >
+                        <input class="fs-12" type="text" placeholder="Last name" ng-model="data.last_name" ng-disabled="l_name">
+                        <span class="input-label edt-txt fs-12 text-clr-grey" ng-show="l_name" ng-click="changeModal('l_name')">Edit</span>
+                        <span class="input-label edt-txt fs-12 text-clr-grey" ng-show="!l_name" ng-click="saveData('l_name','last_name')">Save</span>
+                    </div>
+                    <div class="item item-input form-input-login " >
+                        <input class="fs-12" type="text" placeholder="Email" ng-model="data.email" ng-disabled="e_name">
+                        <span class="input-label edt-txt fs-12 text-clr-grey" ng-show="e_name" ng-click="changeModal('e_name')">Edit</span>
+                        <span class="input-label edt-txt fs-12 text-clr-grey" ng-show="!e_name" ng-click="saveData('e_name','email')">Save</span>
+                    </div>
+                    <label class="item item-input form-input-login ng-hide">
+                        <input class="fs-12" type="text" placeholder="Phone" >
+                        <span class="input-label edt-txt fs-12 text-clr-grey">Edit</span>
+                    </label>
+                    <label class="item item-input form-input-login ng-hide">
+                        <input class="fs-12" type="text" placeholder="Date of birth">
+                        <span class="input-label edt-txt fs-12 text-clr-grey">Edit</span>
+                    </label>
+                    <label class="item item-input form-input-login ng-hide">
+                        <input class="fs-12" type="text" placeholder="Address 1">
+                        <span class="input-label edt-txt fs-12 text-clr-grey">Edit</span>
+                    </label>
+                    <label class="item item-input form-input-login ng-hide">
+                        <input class="fs-12" type="text" placeholder="Address 2">
+                        <span class="input-label edt-txt fs-12 text-clr-grey">Edit</span>
+                    </label>
+                    <label class="item item-input form-input-login ng-hide">
+                        <input class="fs-12" type="text" placeholder="City">
+                        <span class="input-label edt-txt fs-12 text-clr-grey">Edit</span>
+                    </label>
+                    <label class="item item-input form-input-login ng-hide">
+                        <input class="fs-12" type="text" placeholder="Province"> 
+                    </label>
+                    <label class="item item-input form-input-login ng-hide">
+                        <input class="fs-12" type="text" placeholder="Postal Code / Zipcode"> 
+                    </label>
+                    <div class="item item-input form-input-login " >
+                        <input class="fs-12" type="text" placeholder="Country" ng-model="data.country" ng-disabled="c_name">
+                        <span class="input-label edt-txt fs-12 text-clr-grey" ng-show="c_name" ng-click="changeModal('c_name')">Edit</span>
+                        <span class="input-label edt-txt fs-12 text-clr-grey" ng-show="!c_name" ng-click="saveData('c_name','country')">Save</span>
+                    </div>
+                    <label class="item item-input form-input-login ng-hide">
+                        <input class="fs-12" type="text" placeholder="Profession">
+                    </label>
+                    <label class="item item-input form-input-login ng-hide">
+                        <input class="fs-12" type="text" placeholder="Yearly income"> 
+                    </label>
+                    <label class="item item-input form-input-login ng-hide">
+                        <input class="fs-12" type="text" placeholder="Education level">
+                    </label>
+
+                    <!-- <h4 style="margin-top: 28px; padding-left: 14px;">Social profiles</h4> -->
+                    <!-- <label class="item item-input form-input-login border-top-login " >
+                        <input class="fs-12" type="text" placeholder="linkedin profile"> 
+                    </label>
+                    <label class="item item-input form-input-login ">
+                        <input class="fs-12" type="text" placeholder="facebook profil"> 
+                    </label>
+                    <label class="item item-input form-input-login ">
+                        <input class="fs-12" type="text" placeholder="instagram">
+                    </label>
+                    <label class="item item-input form-input-login ">
+                        <input class="fs-12" type="text" placeholder="twitter"> 
+                    </label>
+                    <label class="item item-input form-input-login ">
+                        <input class="fs-12" type="text" placeholder="Pinterest">
+                    </label>
+                      <label class="item item-input form-input-login ">
+                        <input class="fs-12" type="text" placeholder="Google+"> 
+                    </label>
+                    <label class="item item-input form-input-login ">
+                        <input class="fs-12" type="text" placeholder="YouTube">
+                    </label> -->
+                   <!--  <label class="item item-input form-input-login ">
+                        <input class="fs-12" type="text" placeholder="Snapchat">
+                    </label>
+
+
+                    <h5 style="   margin-top: 28px;  padding-left: 6px;">Saved payment methods</h5>
+                     <label class="item item-input form-input-login border-top-login ">
+                        <input class="fs-12" type="text" placeholder="PayPal"> 
+                    </label>
+                    <label class="item item-input form-input-login ">
+                        <input class="fs-12" type="text" placeholder="Credit Card">
+                    </label>
+                      <label class="item item-input form-input-login ">
+                        <input class="fs-12" type="text" placeholder="BitCoin"> 
+                    </label> -->
+                   
+               </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+  </ion-content>
+   
+</ion-view>

@@ -1,0 +1,36 @@
+<ion-view >
+  <ion-content class="big_device_investment">
+    <div class="list " style="margin-bottom: 0px;">
+          <div class="item fs-14 " ui-sref="tab.notification" style="border-top: none;border-bottom: 16px solid #F2F2F2;" >
+            INVESTMENTS OVERVIEW
+          </div>
+    </div>
+
+      <div class="list" style="border-bottom: 16px solid #F2F2F2;" ng-repeat="value in data" ng-if="value.status=='approved'">
+          <div class="row ">
+            <div class="col">
+              
+              <p> <span class="txt-lft" txt-lft>{{value.property_description_address}}</span> <span class="txt-rht" >Active</span></p>
+             </div>
+          </div>
+
+          <div class="row" style="padding-left: 24px;">
+          <div class="col col-25"><span style="color: #10c3c6">{{value.term/12}} years</span><br><span>term</span></div>
+          <div class="col col-25"><span style="color: #10c3c6" >{{value.investors.length}}</span><br><span>Investor</span></div>
+          <div class="col col-25"><span style="color: #10c3c6">{{value.Investment_amount}}</span><br><span>Invested</span></div>
+              <div class="col col-25"><button class="button button-small" style="background-color:#2d9196;color:white" ng-click="investMore($index)">Invest more</button></div>
+          </div>
+         
+          
+      </div>
+
+    
+
+
+
+
+
+    
+       
+  </ion-content>
+</ion-view>

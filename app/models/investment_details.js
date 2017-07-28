@@ -1,0 +1,50 @@
+// get an instance of mongoose and mongoose.Schema
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+// set up a mongoose model and pass it using module.exports
+module.exports = mongoose.model('InvestmentDetails', new Schema({ 
+    first_name: String,
+    last_name: String,
+    email: String,
+    phone: String,
+    country: String,
+    dob: String,
+    address1: String,
+    address2: String,
+
+    status:{ type: String, default: 'PENDING' },
+    transaction_id: String,
+    user_id: String,
+    property_description_address: String,
+    pdf_path: String,
+
+    city: String,
+    province: String,
+    zip: String,
+    beni_first_name: String,
+    beni_last_name: String,
+    beni_email: String,
+    beni_phone: String,
+    beni_dob: String,
+    personal_detail_checkbox: Boolean,
+    government_ids: [],
+    identity_verification_checkbox: Boolean,
+    Investment_amount: String,
+    Investment_amount_checkbox: Boolean,
+    signature:String,
+    investment_signature:String,
+    confidential_checkbox: Boolean,
+   property_id:String,
+    confidential_agree_checkbox: Boolean,
+    anual_return: String,
+    end_date: String,
+    ending_time: String,
+    estimated_return: String,
+    percentAmountInvested:String,
+    min_invest_amount: String,
+    personal_detail_checkbox:Boolean,
+    ownership_percent: String,
+    signature_image:String,
+    term: Number,
+}));

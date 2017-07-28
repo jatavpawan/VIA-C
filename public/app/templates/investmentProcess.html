@@ -1,0 +1,889 @@
+<ion-view cache-view="false">
+
+    <div class="bar bar-subheader" ng-click="goBack()" style="background-color: #33b9b1;font-weight:lighter ">
+      <h5 style="padding-left: 10px;color: white;font-size: 12px;">< Back to Property</h5>
+    </div>
+
+    <!-- <ion-header-bar ng-click="goBack()" style="top:50px;background-color: #ccc;font-weight:lighter ">
+      <h5 style="padding-left: 10px;color: white;font-size: 12px;">< Back to Property</h5>
+    </ion-header-bar> -->
+
+    <ion-content class="content_investment">
+       <!-- <button ng-click="openModal('confidential')" style="margin-top:45px">askljfdlkasdf</button>-->
+        <div class="list bar-subheader ">
+            <div class="row big_device_investment">
+                <div class="col">
+                    <h3 style="padding-left: 16px;font-weight: 300;">Investment Process</h3>
+                    <div class="list list-pad">
+                        <div ng-show="page=='personal_details'">
+                            <h4 style="padding-left: 12px;font-weight: 300;">Personal Details</h4>
+                            <label class="item item-input form-input-login border-top-login">
+                                <input class="fs-12" type="text" placeholder="First Name" ng-model="data.first_name">
+                                <span class="input-label edt-txt fs-12 text-clr-grey">Edit</span>
+                            </label>
+                            <label class="item item-input form-input-login  ">
+                                <input class="fs-12" type="text" placeholder="Last name" ng-model="data.last_name">
+                                <span class="input-label edt-txt fs-12 text-clr-grey">Edit</span>
+                            </label>
+                            <label class="item item-input form-input-login ">
+                                <input class="fs-12" type="email" placeholder="Email" ng-model="data.email">
+                                <span class="input-label edt-txt fs-12 text-clr-grey">Edit</span>
+                            </label>
+                            <label class="item item-input form-input-login ">
+                                <input class="fs-12" type="text" placeholder="Phone" ng-model="data.phone">
+                                <!-- <span class="input-label edt-txt fs-12 text-clr-grey">Edit</span> -->
+                            </label>
+                            <!--<div date-picker ng-model="data.dob" min-view="date" auto-close="true">
+
+                            </div>-->
+                            <div class="item-input form-input-login">
+                                <div ng-if="!isWebView" style="width:100%">
+                                    <datepicker date-format="dd/MM/yyyy">
+                                        <input class="fs-12" type="text" placeholder="Date of birth" ng-model="data.dob">
+                                    </datepicker>
+                                    </div>
+
+                                    <input class="fs-12" type="text" onfocus="(this.type='date')"  placeholder="Date of birth" ng-model="data.dob" ng-show="isWebView">
+                                     <span class="input-label edt-txt fs-12 text-clr-grey">Edit</span>
+                                </div>
+                            <label class="item item-input form-input-login ">
+                                <input class="fs-12" type="text" placeholder="Address1" ng-model="data.address1">
+                                <!-- <span class="input-label edt-txt fs-12 text-clr-grey">Edit</span> -->
+                            </label>
+                            <label class="item item-input form-input-login ">
+                                <input class="fs-12" type="text" placeholder="Address2" ng-model="data.address2">
+                                <!-- <span class="input-label edt-txt fs-12 text-clr-grey">Edit</span> -->
+                            </label>
+                            <label class="item item-input form-input-login ">
+                                <input class="fs-12" type="text" placeholder="City" ng-model="data.user_city">
+                                <!-- <span class="input-label edt-txt fs-12 text-clr-grey">Edit</span> -->
+                            </label>
+                            <label class="item item-input form-input-login ">
+                                <input class="fs-12" type="text" placeholder="Province" ng-model="data.user_province">
+                            </label>
+                            <label class="item item-input form-input-login ">
+                                <input class="fs-12" type="text" placeholder="Postal Code / Zipcode" ng-model="data.zip">
+                            </label>
+                            <label class="item item-input form-input-login ">
+                                <input class="fs-12" type="text" placeholder="Country" ng-model="data.country">
+                            </label>
+
+                            <h4 style=" margin-top 28px; padding-left 12px;">Beneficiaries</h4>
+                            <label class="item item-input form-input-login border-top-login">
+                                <input class="fs-12" type="text" placeholder="First Name" ng-model="data.beni_first_name">
+                                <!-- <span class="input-label edt-txt fs-12 text-clr-grey">Edit</span> -->
+                            </label>
+                            <label class="item item-input form-input-login  ">
+                                <input class="fs-12" type="text" placeholder="Last name" ng-model="data.beni_last_name">
+                                <!-- <span class="input-label edt-txt fs-12 text-clr-grey">Edit</span> -->
+                            </label>
+                            <label class="item item-input form-input-login ">
+                                <input class="fs-12" type="email" placeholder="Email" ng-model="data.beni_email">
+                                <!-- <span class="input-label edt-txt fs-12 text-clr-grey">Edit</span> -->
+                            </label>
+                            <label class="item item-input form-input-login ">
+                                <input class="fs-12" type="text" placeholder="Phone" ng-model="data.beni_phone">
+                                <!-- <span class="input-label edt-txt fs-12 text-clr-grey">Edit</span> -->
+                            </label>
+                            <div class="item item-input form-input-login  ">
+                               
+                               <div ng-if="!isWebView"  style="width:100%">
+
+                                <datepicker date-format="dd/MM/yyyy" >
+                                    <input class="fs-12" type="text" placeholder="Date of birth" ng-model="data.beni_dob">
+                                </datepicker>
+                               </div>
+                               <input class="fs-12" type="text" onfocus="(this.type='date')"  placeholder="Date of birth" ng-model="data.beni_dob" ng-if="isWebView">
+                               <!--  <span class="input-label edt-txt fs-12 text-clr-grey">Edit</span> -->
+                            </div>
+
+                            <ion-checkbox class="border-none" style="color:#b3b3b3;z-index:1" ng-model="data.personal_detail_checkbox">
+                                <span class="wyt-spc" style="font-size: 14px; color: #aaaaaa  !important; ">I accept the Terms And Conditions</span>
+                            </ion-checkbox>
+                            <!--  <label class="item item-input form-input-login no-padding wyt-spc border-none " style="padding-left: 0px; height: auto;">
+                              <ion-checkbox class="border-none" style="color:#808080;position: relative;bottom: 74px;padding-left: 46px;">
+                              </ion-checkbox>
+                             <p style="height: auto;white-space: normal;margin-top: 16px;">I understand /Disclaimer sentence if needed Statement/Disclaimer sentence if needed Statement/Disclaimer sentence if needed Statement/Disclaimer sentence if needed Statement/Disclaimer sentence if needed Statement/Disclaimer sentence if needed Statement/Disclaimer sentence if needed</p>
+                             </label> -->
+
+                            <div class="row ">
+                               
+                                <div class="col ">
+                                    <button class="sign-in-btn button button-balanced button-full text-center" ng-disabled="(!(data.beni_phone&&data.user_city&&data.address1&&data.dob&&data.email&&data.phone&&data.last_name&&data.first_name&&data.beni_dob&&data.beni_email&&data.beni_last_name&&data.beni_first_name&&data.country&&data.user_province&&data.zip))" ng-click="(data.personal_detail_checkbox)?scrollToTop('identity_verification','personal_details'):pleaseCheckBox();" style="font-size: 22px;">Next</button>
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                        </div>
+                        <div ng-show="page=='identity_verification'">
+                            <h4 style="margin-top: 28px; padding-left: 12px;">Indentity Verification</h4>
+                            <div class="list" style="border-bottom: 2px solid #ddd;width: 95%;margin-left: 8px;     margin-bottom: 0px;">
+                                <label class="">
+                                 <select  style="width:100%;border:none;color: #aaaaaa;    font-size: 15px;" >
+                                        <option>Passport</option>
+                                        <option selected >Drivers License</option>
+                                        <option>Government Photo ID Card</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div class="item item-input form-input-login border-top-login">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="fs-12" type="text" style="padding: 7px;float:left" ng-repeat="photo in data.goverment_ids">{{photo.originalname}}<i class="icon"><img src="img/cross.png" width="18" ng-click="deleteId($index)" /></i></div> 
+                                </div>
+
+                            </div>
+                               
+                                <button class="item item-icon-left small_device_upload" style="width:40px; border: none;" ng-click="uploadIds()">
+                                  
+                                    <span class="item-note fs-12">
+                                        Upload
+                                    </span>
+                                </button>
+                                <button class="item item-icon-left big_device_upload" upload-button url="http://138.197.159.97:80/api/uploadPhoto" on-complete="onComplete(response)" style="border: none;" ng-click="uploadIds()">
+
+                                    <span class="item-note fs-12">
+                                        Upload
+                                    </span>
+                                </button>
+                            </div><br>
+                            <ion-checkbox class="border-none" style="color:#b3b3b3" ng-model="data.identity_verification_checkbox" >
+                                <span class="wyt-spc" style="font-size: 14px; color: #aaaaaa  !important; ">I accept the Terms And Conditions</span>
+                            </ion-checkbox>
+                            <div class="row ">
+                                <div class="col ">
+                                    <button class="sign-in-btn button button-balanced button-full text-center" ng-disabled="(data.goverment_ids.length==0)" ng-click="(data.identity_verification_checkbox)?scrollToTop('investement_amount','identity_verification'):pleaseCheckBox()" style="font-size: 22px;">Next</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-show="page=='investement_amount'">
+                            <h4 style=" margin-top 28px; padding-left 12px;">Investment Amount</h4>
+                            <label class="item item-input form-input-login border-top-login">
+                                <input class="fs-16" type="number" placeholder="" string-to-number ng-blur="(data.min_invest_amount>data.Investment_amount)?showAlert():''" ng-model="data.Investment_amount">
+                                <span class="input-label edt-txt fs-12 text-clr-grey">Edit</span>
+                            </label>
+
+                            <ion-checkbox class="border-none" style="color:#b3b3b3"  ng-model="data.Investment_amount_checkbox">
+                                <span class="wyt-spc" style="font-size: 14px; color: #aaaaaa  !important; ">I accept the Terms And Conditions </span>
+                            </ion-checkbox>
+
+                            <h4 style=" margin-top 28px; padding-left 12px;">Confidentialy Agreement</h4>
+                            <label class=" ">
+                                <ion-scroll class="displayOnsmall" style="margin:15px;border: solid grey 1px;height: 400px;padding: 10px;">
+
+                                    <p style="margin: 4px 0 6px;color: #8d8c8c;">
+                                       CONFIDENTIALITY AND NON-DISCLOSURE AGREEMENT - CANADA
+
+<p>1. PARTIES. This Agreement is between Growth Pool, Inc.
+
+(Growth Pool) and the member / user as set forth in legal signature in agreeance of this
+
+document.</p>
+
+<p>(&quot;COMPANY&quot;), each having the address set forth below.</p>
+
+<p>2. BACKGROUND AND PURPOSE OF DISCLOSURE.</p>
+
+<p>Growth Pool, Inc. and all its members are evaluating or are engaged in a business
+
+relationship and it is understood that the member has waived all of his or hers rights to
+
+the control of the property / properties the member has invested in.</p>
+
+<p>Growth Pool, Inc. reserves the right of full control over the confidential information it may
+
+disclose to the member of certain valuable confidential and proprietary information.</p>
+
+<p>3. DESCRIPTION OF CONFIDENTIAL INFORMATION.</p>
+
+<p>Growth Pool, Inc. retains interest in every property and controls every property out-right.
+
+The member is in agreeance and is in full understanding that the properties are in full
+
+control of Growth Pool, Inc.</p>
+
+<p>All information disclosed by Growth Pool (Growth Pool, Inc.) which by its nature is
+
+generally considered proprietary and confidential, disclosed in any manner and
+
+regardless of whether such information is specifically labeled as such, is considered
+
+confidential information, unless such information falls within the exceptions set forth
+
+below (hereinafter such information shall be collectively referred to as &quot;Confidential
+
+Information&quot;). It is understood no information retained through these agreements can be
+
+sold or shown to any third party regardless of circumstance unless otherwise stipulated
+
+in this contract.</p>
+
+<p>4. AGREEMENT TO MAINTAIN CONFIDENTIALITY.</p>
+
+<p>You the “Member” agrees to hold any Confidential Information disclosed to it in
+
+confidence, and to use the same standard of care used to protect its own proprietary
+
+personal and private information, including but not limited to confidential information in
+
+protecting Growth Pool, Inc. its members, partners, employees, affiliates, and founders.</p>
+
+<p>The “Member” shall not disclose Confidential Information to others or use it for purposes
+
+other than personal use.</p>
+
+<p>5. Growth Pool, Inc. and all its properties and relationships are considered to be
+
+confidential and any inside information received through the documents, agreements,
+
+terms and conditions, privacy policy, and investor oath is of confidential nature and
+
+considered private information that is not to be disclosed to any public figure or non-
+
+member of Growth Pool (Growth Pool, Inc.)</p>
+
+<p>6. EFFECTIVE DATE AND LENGTH OF OBLIGATION. This Agreement is effective as
+
+of the date of execution by Growth Pool, Inc. and may be terminated by Growth Pool,
+
+Inc. at any time upon written notice. The “Members” obligation of confidentiality and
+
+non-use for Confidential Information hereunder shall last until such Confidential
+
+Information ceases to be confidential.</p>
+
+<p>7. It is understood that any information that is not generally available to the public
+
+(without membership) is considered private confidential information and is not to be
+
+disclosed to but not limited to non-members, third parties, media, competitors. All
+
+information retained through the Growth Pool, Inc. platform, mobile-app, and website is
+
+of private information and not to be dis-closed to anyone not in agreeance of the Growth
+
+Pool, Inc. Investor Oath, Terms &amp; Conditions, Privacy-Policy.</p>
+
+<p>12. AMENDMENTS. This Agreement supersedes all previous agreements between the
+
+parties regarding the Confidential Information and cannot be cancelled, assigned or
+
+modified without the prior written consent of Growth Pool, Inc.</p>
+
+<p>13. BREACH. If you the “Member” breaches the term(s) of this Agreement, Growth
+
+Pool, Inc. shall have the right to (a) demand the immediate return of all Confidential
+
+Information; (b) seek to recover its actual damages incurred due to such breach,
+
+including, without limitation, all costs and expenses incurred in connection therewith,
+
+including without limitation, legal expenses on a substantial indemnity basis; (c) obtain
+
+injunctive relief in any court of competent jurisdiction to prevent any such threatened
+
+breach or to otherwise enforce the terms of this Agreement; and/or (d) pursue any other
+
+remedy available at law or in equity. Failure to properly demand compliance or
+
+performance of any term of this Agreement shall not constitute a waiver or action of any
+
+kind rights hereunder.</p>
+
+<p>I, the “Member”, understand that all information not limited to the property, ROI (return
+
+on investment), property or company financials, personal or private data, member data,
+
+is strictly confidential. Misuse of confidential information can and will result in the loss of
+
+my membership, account and investments without warning by default of this agreement.</p>
+
+<p>14. LANGUAGE OF AGREEMENT. The parties acknowledge that it is their express
+
+wish that this Agreement and all related documents be prepared in English.</p>
+
+<p>Company Name: Growth Pool, Inc.</p>
+
+                                    </p>
+                                </ion-scroll>
+                                <div class="displayOnbig" style="margin:15px;border: solid grey 1px;height: 400px;padding: 10px; overflow-y:auto">
+                                    <p style="margin: 4px 0 6px;color: #8d8c8c;">
+                                        CONFIDENTIALITY AND NON-DISCLOSURE AGREEMENT - CANADA
+
+                                    <p>
+                                        1. PARTIES. This Agreement is between Growth Pool, Inc.
+
+                                        (Growth Pool) and the member / user as set forth in legal signature in agreeance of this
+
+                                        document.
+                                    </p>
+
+                                    <p>(&quot;COMPANY&quot;), each having the address set forth below.</p>
+
+                                    <p>2. BACKGROUND AND PURPOSE OF DISCLOSURE.</p>
+
+                                    <p>
+                                        Growth Pool, Inc. and all its members are evaluating or are engaged in a business
+
+                                        relationship and it is understood that the member has waived all of his or hers rights to
+
+                                        the control of the property / properties the member has invested in.
+                                    </p>
+
+                                    <p>
+                                        Growth Pool, Inc. reserves the right of full control over the confidential information it may
+
+                                        disclose to the member of certain valuable confidential and proprietary information.
+                                    </p>
+
+                                    <p>3. DESCRIPTION OF CONFIDENTIAL INFORMATION.</p>
+
+                                    <p>
+                                        Growth Pool, Inc. retains interest in every property and controls every property out-right.
+
+                                        The member is in agreeance and is in full understanding that the properties are in full
+
+                                        control of Growth Pool, Inc.
+                                    </p>
+
+                                    <p>
+                                        All information disclosed by Growth Pool (Growth Pool, Inc.) which by its nature is
+
+                                        generally considered proprietary and confidential, disclosed in any manner and
+
+                                        regardless of whether such information is specifically labeled as such, is considered
+
+                                        confidential information, unless such information falls within the exceptions set forth
+
+                                        below (hereinafter such information shall be collectively referred to as &quot;Confidential
+
+                                        Information&quot;). It is understood no information retained through these agreements can be
+
+                                        sold or shown to any third party regardless of circumstance unless otherwise stipulated
+
+                                        in this contract.
+                                    </p>
+
+                                    <p>4. AGREEMENT TO MAINTAIN CONFIDENTIALITY.</p>
+
+                                    <p>
+                                        You the “Member” agrees to hold any Confidential Information disclosed to it in
+
+                                        confidence, and to use the same standard of care used to protect its own proprietary
+
+                                        personal and private information, including but not limited to confidential information in
+
+                                        protecting Growth Pool, Inc. its members, partners, employees, affiliates, and founders.
+                                    </p>
+
+                                    <p>
+                                        The “Member” shall not disclose Confidential Information to others or use it for purposes
+
+                                        other than personal use.
+                                    </p>
+
+                                    <p>
+                                        5. Growth Pool, Inc. and all its properties and relationships are considered to be
+
+                                        confidential and any inside information received through the documents, agreements,
+
+                                        terms and conditions, privacy policy, and investor oath is of confidential nature and
+
+                                        considered private information that is not to be disclosed to any public figure or non-
+
+                                        member of Growth Pool (Growth Pool, Inc.)
+                                    </p>
+
+                                    <p>
+                                        6. EFFECTIVE DATE AND LENGTH OF OBLIGATION. This Agreement is effective as
+
+                                        of the date of execution by Growth Pool, Inc. and may be terminated by Growth Pool,
+
+                                        Inc. at any time upon written notice. The “Members” obligation of confidentiality and
+
+                                        non-use for Confidential Information hereunder shall last until such Confidential
+
+                                        Information ceases to be confidential.
+                                    </p>
+
+                                    <p>
+                                        7. It is understood that any information that is not generally available to the public
+
+                                        (without membership) is considered private confidential information and is not to be
+
+                                        disclosed to but not limited to non-members, third parties, media, competitors. All
+
+                                        information retained through the Growth Pool, Inc. platform, mobile-app, and website is
+
+                                        of private information and not to be dis-closed to anyone not in agreeance of the Growth
+
+                                        Pool, Inc. Investor Oath, Terms &amp; Conditions, Privacy-Policy.
+                                    </p>
+
+                                    <p>
+                                        12. AMENDMENTS. This Agreement supersedes all previous agreements between the
+
+                                        parties regarding the Confidential Information and cannot be cancelled, assigned or
+
+                                        modified without the prior written consent of Growth Pool, Inc.
+                                    </p>
+
+                                    <p>
+                                        13. BREACH. If you the “Member” breaches the term(s) of this Agreement, Growth
+
+                                        Pool, Inc. shall have the right to (a) demand the immediate return of all Confidential
+
+                                        Information; (b) seek to recover its actual damages incurred due to such breach,
+
+                                        including, without limitation, all costs and expenses incurred in connection therewith,
+
+                                        including without limitation, legal expenses on a substantial indemnity basis; (c) obtain
+
+                                        injunctive relief in any court of competent jurisdiction to prevent any such threatened
+
+                                        breach or to otherwise enforce the terms of this Agreement; and/or (d) pursue any other
+
+                                        remedy available at law or in equity. Failure to properly demand compliance or
+
+                                        performance of any term of this Agreement shall not constitute a waiver or action of any
+
+                                        kind rights hereunder.
+                                    </p>
+
+                                    <p>
+                                        I, the “Member”, understand that all information not limited to the property, ROI (return
+
+                                        on investment), property or company financials, personal or private data, member data,
+
+                                        is strictly confidential. Misuse of confidential information can and will result in the loss of
+
+                                        my membership, account and investments without warning by default of this agreement.
+                                    </p>
+
+                                    <p>
+                                        14. LANGUAGE OF AGREEMENT. The parties acknowledge that it is their express
+
+                                        wish that this Agreement and all related documents be prepared in English.
+                                    </p>
+
+                                    <p>Company Name: Growth Pool, Inc.</p>
+
+                                    </p>
+
+                                </div>
+                            </label>
+
+                            <ion-checkbox class="border-none" style="color:#b3b3b3" ng-model="data.confidential_checkbox">
+                                <span class="wyt-spc" style="font-size: 14px; color: #aaaaaa  !important; ">I accept the Terms And Conditions</span>
+                            </ion-checkbox>
+
+                            <div class="item item-input" ng-click="openModal('confidential')" style="margin:15px;">
+                                <input class="fs-16" type="text" placeholder="please tap here to sign" ng-disabled="true" style="background-color:white" >
+                            </div>
+                            <div class="text-center">
+                                <img ng-src="{{data.signature_image}}" width="100"/>
+                            </div>
+                            <div class="row ">
+                                <div class="col ">
+                                    <button class="sign-in-btn button button-balanced button-full text-center" ng-disabled="checkDisability()" ng-click="(data.confidential_checkbox&&data.Investment_amount_checkbox)?scrollToTop('confidential_agreement','investement_amount'):pleaseCheckBox()" style="font-size: 22px;">Next</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-show="page=='confidential_agreement'">
+                            <h4 style="margin-top 28px; padding-left 12px;">Investment Agreement</h4>
+                            <label class=" ">
+                               <ion-scroll class="displayOnsmall" style="margin:15px;border: solid grey 1px;height: 400px;padding: 10px;">
+                                    <p style="margin: 4px 0 6px;color: #8d8c8c;">
+                                        INVESTOR AGREEMENT.
+
+                                        <p>  The Investor Agreement (the &quot;Agreement&quot;) made and entered into this {{data.today_date}} day of {{data.month}}, 
+
+{{data.year}} (the &quot;Execution Date&quot;), between: <b>{{data.first_name}}</b> <b>{{data.last_name}}</b> of <b>{{data.property_description_address}}</b> (Herewith known as the ‘Investor’) and Growth Pool, Inc. (Herewith known as ‘Growth Pool’).</p>
+<p>I <b>{{data.first_name}}</b> <b>{{data.last_name}}</b> am investing CAN$&nbsp;<b>{{data.Investment_amount}}</b> </p>
+
+IN:<br>
+
+<p><b>Growth Pool</b> property {{data.property_description_address}}; for the duration of the investment term of {{data.term}};.
+
+I understand Growth Pool takes no responsibility for market conditions, changes of the economy or real
+
+estate market performance. I am fully aware that all investments have risks, and it is possible for me to
+
+lose part, if not all, of my investment.</p>
+
+<p>I hereby give full authority to Growth Pool to manage the property with my absolute confidence without
+
+prejudice.</p>
+
+<p>I, <b>{{data.first_name}}</b> <b>{{data.last_name}}</b>, acknowledge all the information I have provided is true and of legal
+
+precedent.</p> 
+
+<p>The <b>‘Investor’</b> agrees to keep the details of this agreement strictly confidential and warrants that the
+
+details of this agreement will not be disclosed to anyone except the ‘Investor’, their accountant and/or
+
+consultant and will not be used for any purpose other than in connection with the completion of this
+
+transaction.</p>
+
+<p>I, <b>{{data.first_name}}</b> <b>{{data.last_name}}</b>, acknowledge I have not been solicited into investing and am doing so at
+
+my own discretion and have had ample time to perform my own due-diligence on this particular
+
+investment.</p>
+
+<p><b>Growth Pool</b> takes no responsibility for any 3 rd party or referral influence on the <b>Investor</b>.</p>
+
+<p>From the date hereof until the closing date or the earlier termination of this agreement shall not, nor shall
+
+it permit any person acting on behalf of the Investor, to contact or enter into negotiations with third
+
+parties regarding the sale or other disposition of the property or any part thereof, unless specifically
+
+provided in this agreement.</p>
+
+<p>In case of death <b>Growth Pool</b> shall make the necessary efforts to contact the <b>Investor’s</b> next-of- kin and
+
+beneficiaries that the Investor has added to their account profile. Failure to contact next-of- kin within 18
+
+months after the term of this investment will result in <b>Growth Pool</b> acquiring the Investor’s funds.</p>
+
+<p>I understand <b>Growth Pool</b> has the right to sell the investment property prior to said investment projected
+
+exit date, when in the best interest of all parties and investors involved or delay at its own unfettered
+
+discretion up to 12 months after the proposed exit date. Such delay to be based on market conditions at
+
+the time and deemed to be in the best interest of the <b>Investor</b>.</p>
+
+<p>I understand <b>Growth Pool</b> has full control of all its investments.</p>
+
+<p><b>By investing with Growth Pool, I give full authority to Growth Pool, Inc. to invest my funds in
+
+property</b> {{data.property_description_address}}.</p>
+
+<p>I agree to not take any legal action against and/or hold harmless <b>Growth Pool</b> and its affiliates, third
+
+party businesses, companies, builders, developers, owners, directors, and/or partners.</p>
+
+<p>Any action taken against <b>Growth Pool</b> can and will result in legal action against the Investor.</p>
+
+<p><b>Growth Pool</b> reserves the right to terminate and ban any member violating any of its terms, conditions,
+
+policies, rules and enforcements.</p>
+
+<p>Any investment made with <b>Growth Pool</b> has a 48 hour period for refund except for within 48 hours of the
+
+investment funding closing. Choosing to invest in a property with Growth Pool within 48 hours of its
+
+closing renders this 48 hour refund period null and void.</p>
+
+<p>I understand Growth Pools fee's and equity stake in all investments. <b>Growth Pool</b> is responsible for
+
+arranging mortgages, property management, renting units / properties, insurance, purchases and sales of
+
+all of investments etc. <b>Growth Pool</b> does not take responsibility for any loss or injury claimed to be a
+
+result of <b>Growth Pools</b> actions or behavior. Furthermore any individual accessing <b>Growth Pool</b> confidential and private website, platform, and mobile app for but not limited to, personal gain,
+
+defamation, advertising, marketing, media, or use of any kind can and will be prosecuted.</p>
+
+<p>I hereby acknowledge <b>Growth Pool</b> has not solicited me in any way. </p>
+
+<p><b>Growth Pool</b> takes no responsibility for the accuracy, completeness, reliability, suitability, of any of the
+
+information provided on our website, platform, mobile app, social-media, graphics, advertising, marketing,
+
+emails, all third-party information or claims supplied.</p>
+
+<p>By signing this document, I hereby am in agreeance of this document and all of <b>Growth Pools</b> TERMS&amp;CONDITIONS, POLICIES, RULES & REGULATIONS, AND INVESTOR OATH.</p>
+
+<p>I have read and understand this document in all its entirety. I understand I can access this document via
+
+the platform under documents in my investor-tracking section of my profile. Any complaints or concerns
+
+can be directed at <u>info@growthpool.com.</u> Any errors or corrections may also be directed
+
+at <u>info@growthpool.com.</u></p>
+                                    </p>
+                                </ion-scroll>
+                                <div class="displayOnbig" style="margin:15px;border: solid grey 1px;height: 400px;padding: 10px; overflow-y:auto">
+                                    <p style="margin: 4px 0 6px;color: #8d8c8c;">
+                                        INVESTOR AGREEMENT.
+
+                                    <p>
+                                        The Investor Agreement (the &quot;Agreement&quot;) made and entered into this {{data.today_date}} day of {{data.month}},
+
+                                        {{data.year}} (the &quot;Execution Date&quot;), between: <b>{{data.first_name}}</b> <b>{{data.last_name}}</b> of <b>{{data.property_description_address}}</b> (Herewith known as the ‘Investor’) and Growth Pool, Inc. (Herewith known as ‘Growth Pool’).
+                                    </p>
+                                    <p>I <b>{{data.first_name}}</b> <b>{{data.last_name}}</b> am investing CAN$&nbsp;<b>{{data.Investment_amount}}</b> </p>
+
+                                    IN:<br>
+
+                                    <p>
+                                        <b>Growth Pool</b> property {{data.property_description_address}}; for the duration of the investment term of {{data.term}};.
+
+                                        I understand Growth Pool takes no responsibility for market conditions, changes of the economy or real
+
+                                        estate market performance. I am fully aware that all investments have risks, and it is possible for me to
+
+                                        lose part, if not all, of my investment.
+                                    </p>
+
+                                    <p>
+                                        I hereby give full authority to Growth Pool to manage the property with my absolute confidence without
+
+                                        prejudice.
+                                    </p>
+
+                                    <p>
+                                        I, <b>{{data.first_name}}</b> <b>{{data.last_name}}</b>, acknowledge all the information I have provided is true and of legal
+
+                                        precedent.
+                                    </p>
+
+                                    <p>
+                                        The <b>‘Investor’</b> agrees to keep the details of this agreement strictly confidential and warrants that the
+
+                                        details of this agreement will not be disclosed to anyone except the ‘Investor’, their accountant and/or
+
+                                        consultant and will not be used for any purpose other than in connection with the completion of this
+
+                                        transaction.
+                                    </p>
+
+                                    <p>
+                                        I, <b>{{data.first_name}}</b> <b>{{data.last_name}}</b>, acknowledge I have not been solicited into investing and am doing so at
+
+                                        my own discretion and have had ample time to perform my own due-diligence on this particular
+
+                                        investment.
+                                    </p>
+
+                                    <p><b>Growth Pool</b> takes no responsibility for any 3 rd party or referral influence on the <b>Investor</b>.</p>
+
+                                    <p>
+                                        From the date hereof until the closing date or the earlier termination of this agreement shall not, nor shall
+
+                                        it permit any person acting on behalf of the Investor, to contact or enter into negotiations with third
+
+                                        parties regarding the sale or other disposition of the property or any part thereof, unless specifically
+
+                                        provided in this agreement.
+                                    </p>
+
+                                    <p>
+                                        In case of death <b>Growth Pool</b> shall make the necessary efforts to contact the <b>Investor’s</b> next-of- kin and
+
+                                        beneficiaries that the Investor has added to their account profile. Failure to contact next-of- kin within 18
+
+                                        months after the term of this investment will result in <b>Growth Pool</b> acquiring the Investor’s funds.
+                                    </p>
+
+                                    <p>
+                                        I understand <b>Growth Pool</b> has the right to sell the investment property prior to said investment projected
+
+                                        exit date, when in the best interest of all parties and investors involved or delay at its own unfettered
+
+                                        discretion up to 12 months after the proposed exit date. Such delay to be based on market conditions at
+
+                                        the time and deemed to be in the best interest of the <b>Investor</b>.
+                                    </p>
+
+                                    <p>I understand <b>Growth Pool</b> has full control of all its investments.</p>
+
+                                    <p>
+                                        <b>
+                                            By investing with Growth Pool, I give full authority to Growth Pool, Inc. to invest my funds in
+
+                                            property
+                                        </b> {{data.property_description_address}}.
+                                    </p>
+
+                                    <p>
+                                        I agree to not take any legal action against and/or hold harmless <b>Growth Pool</b> and its affiliates, third
+
+                                        party businesses, companies, builders, developers, owners, directors, and/or partners.
+                                    </p>
+
+                                    <p>Any action taken against <b>Growth Pool</b> can and will result in legal action against the Investor.</p>
+
+                                    <p>
+                                        <b>Growth Pool</b> reserves the right to terminate and ban any member violating any of its terms, conditions,
+
+                                        policies, rules and enforcements.
+                                    </p>
+
+                                    <p>
+                                        Any investment made with <b>Growth Pool</b> has a 48 hour period for refund except for within 48 hours of the
+
+                                        investment funding closing. Choosing to invest in a property with Growth Pool within 48 hours of its
+
+                                        closing renders this 48 hour refund period null and void.
+                                    </p>
+
+                                    <p>
+                                        I understand Growth Pools fee's and equity stake in all investments. <b>Growth Pool</b> is responsible for
+
+                                        arranging mortgages, property management, renting units / properties, insurance, purchases and sales of
+
+                                        all of investments etc. <b>Growth Pool</b> does not take responsibility for any loss or injury claimed to be a
+
+                                        result of <b>Growth Pools</b> actions or behavior. Furthermore any individual accessing <b>Growth Pool</b> confidential and private website, platform, and mobile app for but not limited to, personal gain,
+
+                                        defamation, advertising, marketing, media, or use of any kind can and will be prosecuted.
+                                    </p>
+
+                                    <p>I hereby acknowledge <b>Growth Pool</b> has not solicited me in any way. </p>
+
+                                    <p>
+                                        <b>Growth Pool</b> takes no responsibility for the accuracy, completeness, reliability, suitability, of any of the
+
+                                        information provided on our website, platform, mobile app, social-media, graphics, advertising, marketing,
+
+                                        emails, all third-party information or claims supplied.
+                                    </p>
+
+                                    <p>By signing this document, I hereby am in agreeance of this document and all of <b>Growth Pools</b> TERMS&amp;CONDITIONS, POLICIES, RULES & REGULATIONS, AND INVESTOR OATH.</p>
+
+                                    <p>
+                                        I have read and understand this document in all its entirety. I understand I can access this document via
+
+                                        the platform under documents in my investor-tracking section of my profile. Any complaints or concerns
+
+                                        can be directed at <u>info@growthpool.com.</u> Any errors or corrections may also be directed
+
+                                        at <u>info@growthpool.com.</u>
+                                    </p>
+                                    </p>
+                                </div>
+
+                            </label>
+
+                            <ion-checkbox class="border-none" style="color:#b3b3b3" ng-model="data.confidential_agree_checkbox">
+                                <span class="wyt-spc" style="font-size: 14px; color: #aaaaaa  !important; ">I accept the Terms And Conditions</span>
+                            </ion-checkbox>
+                            <div class="item item-input" ng-click="openModal('investment')" style="margin:15px;">
+                                <input class="fs-16" type="text" placeholder="please tap here to sign" ng-disabled="true" style="background-color:white">
+                            </div>
+                            <div class="text-center">
+                                <img ng-src="{{data.investment_signature}}" width="100" />
+                            </div>
+                            <label class="item item-input  " style="margin:15px;">
+                                <input class="fs-16" type="number" string-to-number ng-blur="(data.min_invest_amount>data.Investment_amount)?showAlert():''" placeholder="" ng-model="data.Investment_amount">
+                            </label>
+                            <label class="text-center">
+                                <p>*You will be charged a $50 CAD Growth Pool administration fee</p>
+                            </label>
+                            <div class="row ">
+                                <div class="col text-center">
+                                    <button class="sign-in-btn button button-balanced button-full text-center" ng-show="payButtonMobile" ng-click="(data.confidential_agree_checkbox)?investNow():pleaseCheckBox()" ng-disabled="(data.Investment_amount<data.min_invest_amount)?true:false" style="font-size: 22px;">Invest Now</button>
+                                    <div id="paypal-button" ng-show="payButton"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!--  <h5 style="   margin-top: 28px; padding-left: 6px;">Indentity Verification</h5>
+                         <label class="item item-input form-input-login border-top-login">
+                             <input class="fs-12" type="text" placeholder="Government ID">
+                             <span class="input-label edt-txt fs-12 text-clr-grey">Edit</span>
+                         </label>
+
+
+
+
+                         <h5 style="   margin-top: 28px;  padding-left: 6px;">Method of Payment</h5>
+                        <label class="item item-input  border-none no-padding  " style="padding-left: 0px;">
+                              <ion-checkbox class="border-none" style="color:#808080">
+                              <span class="fs-14">PayPal</span>
+                             </ion-checkbox>
+                         </label>
+                         <label class="item item-input  border-none no-padding " style="padding-left: 0px;">
+                                  <ion-checkbox class="border-none" style="color:#808080">
+                                  <span class="fs-14">BitCoin</span>
+                                 </ion-checkbox>
+                         </label>
+                         <label class="item item-input  border-none no-padding " style="padding-left: 0px;">
+                                  <ion-checkbox class="border-none" style="color:#808080">
+                                  <span class="fs-14">Visa</span>.
+                                 </ion-checkbox>
+                         </label>
+                         <label class="item item-input  border-none no-padding " style="padding-left: 0px;">
+                                  <ion-checkbox class="border-none" style="color:#808080">
+                                  <span class="fs-14">MasterCard</span>
+                                 </ion-checkbox>
+                         </label>
+                         <label class="item item-input  border-none no-padding " style="padding-left: 0px;">
+                                  <ion-checkbox class="border-none" style="color:#808080">
+                                  <span class="fs-14">American Express</span>
+                                 </ion-checkbox>
+                         </label>
+
+
+                         <div style="margin-top: 28px;background-color:#D0D2D3;height: 200px;padding: 30px;">
+                             <p>Payment data entry box based on above selection</p>
+                         </div>
+
+                          <h5 style="margin-top: 28px;padding-left: 6px;">Review and Sign Agreement</h5>
+
+                         <div style="margin-top: 28px;background-color: #D0D2D3;height: 200px;padding: 30px;">
+                             <p>Scroll Box with generated agreement.</p>
+                         </div>
+
+                         <label style="  margin-top: 28px;" class="item item-input ">
+                             <span class="input-label  fs-10 text-clr-grey">Digital Signature Applied to Agreement</span>
+                         </label>
+
+                         <label class="item item-input  border-none no-padding " style="padding-left: 0px;">
+                              <ion-checkbox class="border-none" style="color:#808080">
+                              <span class="fs-14">Visa</span>
+                             </ion-checkbox>
+                         </label>
+                         <label class="item item-input  border-none no-padding " style="padding-left: 0px;">
+                              <ion-checkbox class="border-none" style="color:#808080">
+                              <span class="fs-14">MasterCard</span>
+                             </ion-checkbox>
+                         </label>
+                         <label class="item item-input  border-none no-padding " style="padding-left: 0px;">
+                              <ion-checkbox class="border-none" style="color:#808080">
+                              <span class="fs-14">American Express</span>
+                             </ion-checkbox>
+                         </label>
+
+                         <p style="margin-top: 28px; font-size: 10px;">
+                         </p>
+
+                         <div style="margin-top: 28px;background-color: #D0D2D3;height: 200px;padding: 30px;">
+                             <p>Property Card</p>
+                         </div>
+
+                         <label class="item item-input  border-none no-padding " style="padding-left: 0px;">
+                              <ion-checkbox class="border-none" style="color:#808080">
+                              <span class="fs-12 wyt-spc">I confirm that the above property is the correcti nvestment</span>
+                             </ion-checkbox>
+                         </label>
+
+
+                         <h5 style="   margin-top: 28px; padding-left: 6px;">Overview and Agree</h5>
+
+                          <p style="  margin-top: 28px;" >After Submit screen saying the information will be verified and the payment will be processed after 48 hours.</p> -->
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
+
+</ion-view>
