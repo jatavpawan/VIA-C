@@ -1,0 +1,47 @@
+
+<div class="login-page animate">
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4">
+            <img src="../img/logo.png" width="150" class="user-avatar" />
+            <h1>VIA/C</h1>
+            <form name="RegistrationForm">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="first_name" ng-model="data.first_name" id="first_name" class="form-control  input-underline input-lg" placeholder="First Name">
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="last_name" ng-model="data.last_name" id="last_name" class="form-control  input-underline input-lg" placeholder="Last Name">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" name="email" id="email" ng-model="data.email" class="form-control  input-underline input-lg" placeholder="Email Address">
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <input type="password" name="password" ng-model="data.password" id="password" class="form-control  input-underline input-lg" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <input type="password" ng-model="data.confirmPassword" name="password_confirmation" id="password_confirmation" class="form-control  input-underline input-lg" placeholder="Confirm Password">
+                        </div>
+                    </div>
+                </div>
+
+
+                <button type="button" ng-disabled="RegistrationForm.$invalid" ng-click="registerUser(data)" style="width: 250px;" class="btn  rounded-btn">
+                    Register
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

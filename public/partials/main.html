@@ -1,0 +1,84 @@
+<div class="row">
+  <div class="col-md-2">
+    <aside id="sidebar" style="width: 16.66667%;">
+    <div class="sidenav-outer">
+          <div class="menu-body">
+              <ul class="nav nav-pills nav-stacked sidenav">
+                  <li>
+                      <a class="website-name">
+                          Growthpool Admin
+                      </a>
+                  </li>
+                  <li>
+                      <a class="logo" style="width:100%">
+                          <img height="100" width="100" src="../img/logo.png" class="user-avatar" />
+                          <p class=""><strong>Growthpool</strong></p>
+                      </a>
+                  </li>
+                  <!--<li>
+                      <a ui-sref="app.category">
+                        <i class="fa fa-newspaper-o"></i>
+                        Categories
+                    </a>
+                  </li>-->
+                  <li>
+                      <a ui-sref="app.product">
+                        <i class="fa fa-newspaper-o"></i>
+                        Properties
+                    </a>
+                  </li>
+                  <!--<li>
+                      <a ui-sref="app.homeSlider">
+                        <i class="fa fa-newspaper-o"></i>
+                        Home Slider
+                    </a>
+                  </li>-->
+                  <li>
+                      <a ui-sref="app.orders">
+                        <i class="fa fa-user"></i>
+                        Users
+                    </a>
+                  </li>
+
+                  <li>
+                      <a ui-sref="app.userinvestment">
+                        <i class="fa fa-indent"></i>
+                        Investments
+                    </a>
+                  </li>
+                  <!--<li>
+                      <a ui-sref="app.rationList">
+                        <i class="fa fa-sliders"></i>
+                        Ration List
+                    </a>
+                  </li>
+                  <li>
+                      <a ui-sref="app.services">
+                        <i class="fa fa-hacker-news"></i>
+                        Services
+                    </a>
+                  </li>-->
+                  <!--<li>
+                      <a ui-sref="app.feedback">
+                        <i class="fa fa-hacker-news"></i>
+                        Feedback
+                    </a>
+                  </li>-->
+                  <li>
+                      <a ng-click="logout()"><i class="fa fa-sign-out"></i><span>&nbsp;&nbsp; Logout</span></a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+    </aside>
+  </div>
+  <div class="col-md-10">
+    <div ui-view="container"></div>
+    <div ng-show='loadCompetition'>
+      <div class="loading_div">
+        <img src="../img/loader.svg" style="width: 40% !important;" />
+      </div>
+    </div>
+    <!--<div style="margin-top:30%;" us-spinner="{radius:30, width:8, length: 16}"></div>-->
+  </div>
+</div>

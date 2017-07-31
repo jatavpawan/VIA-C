@@ -1,0 +1,106 @@
+<style>
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover, .nav-tabs>li>a:focus, .nav-tabs>li>a:hover {
+  color: #fff;
+  background-color: #53B889;
+  font-size: 21px;
+  font-weight: bolder;
+}
+.nav-tabs>li {
+  width: 33%;
+  text-align: center;
+}
+.nav>li>a {
+  color: #53B889;
+}
+.nav-tabs>li>a {
+  font-size: 21px;
+  font-weight: bolder;
+}
+.checkbox-custom, .radio-custom {
+    opacity: 0;
+    position: absolute;   
+}
+
+.checkbox-custom, .checkbox-custom-label, .radio-custom, .radio-custom-label {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.checkbox-custom-label, .radio-custom-label {
+    position: relative;
+}
+
+.checkbox-custom + .checkbox-custom-label:before, .radio-custom + .radio-custom-label:before {
+    content: '';
+    background: #fff;
+    border: 2px solid #ddd;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.checkbox-custom:checked + .checkbox-custom-label:before {
+    background: #62D7D8;
+    border: 2px solid #62D7D8;
+    box-shadow: inset 0px 0px 0px 4px #fff;
+}
+
+.radio-custom + .radio-custom-label:before {
+    border-radius: 50%;
+}
+
+.radio-custom:checked + .radio-custom-label:before {
+    background: #62D7D8;
+    box-shadow: inset 0px 0px 0px 4px #fff;
+}
+</style>
+<div class="animate">
+  <div class="row">
+      <div class="col-sm-12">
+          <div class="card">
+              <div class="card-header card-info card-inverse">
+                  <h3 class="card-title">Services</h3>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="card-block">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <table class="table table-bordered table-striped table-hover" ng-if="feedbackList.length > 0">
+                <thead>
+                  <tr>
+                    <th>Feedback #</th>
+                    <th>Phone</th>
+                    <th>Feedback</th>
+                    <th>Date</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="feedback in feedbackList">
+                    <th>{{ feedback.feedback_id }}</th>
+                    <td>{{ feedback.phone_number }}</td>
+                    <td>{{ feedback.feedback }}</td>
+                    <td>{{ feedback.date | date}}</td>
+                    <td><i ng-click="deleteFeedback(feedback)" class="fa fa-times cursor-pointer text-danger"></i>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

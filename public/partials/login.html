@@ -1,0 +1,36 @@
+<div class="login-page animate">
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4" style="margin-top:10%;">
+            <img src="../img/logo.png" width="150" class="user-avatar" />
+          
+            <form name="loginForm" ng-hide="forgotPass">
+                <div class="form-content">
+                    <div class="form-group">
+                        <input type="email" ng-model="loginData.email" class="form-control input-underline input-lg" name="email" placeholder="Email" required>
+                        <div ng-show="loginForm.email.$invalid && !loginForm.email.$pristine" class="padding-right">Invalid Email</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" ng-model="loginData.password" class="form-control input-underline input-lg" name="password" placeholder="Password" required>
+                        <div ng-show="loginForm.password.$invalid && !loginForm.password.$pristine" class="padding-right">Password is required</div>
+                        <div  class="pull-right margin-top cursor-pointer"><span ng-click="forgotPass=!forgotPass">Forgot Password / </span><span ui-sref="signUp">SignUp</span></div>
+                    </div>
+                </div>
+                <div class="text-center padding-bottom">{{ message }}</div>
+                <button ng-disabled="loginForm.$invalid" class="btn rounded-btn" ng-click="doLogin(loginData);"> Log in </button>
+            </form>
+            <div ng-show="forgotPass">
+              <div class="text-center padding-bottom">{{ forgotMessage }}</div>
+
+                <div class="form-group">
+                    <input type="email" ng-model="user.email" class="form-control input-underline input-lg" name="email" placeholder="Enter email address" required>
+                    <div ng-show="user.email.$invalid && !user.email.$pristine" class="padding-right">Invalid Email</div>
+                </div>
+                <div  class="padding-right">{{forgotMessage}}</div>
+                <button class="btn rounded-btn" ng-click="sendPassword(user);"> Send Password </button>
+                <button class="btn rounded-btn" ng-click="forgotPass=false"> Back</button>
+
+            </div>
+        </div>	
+    </div>
+</div>
+

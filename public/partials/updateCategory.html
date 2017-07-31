@@ -1,0 +1,61 @@
+<div class="animate">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header card-info card-inverse">
+                    <h3 class="card-title">Update Category</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="card-block">
+                    <form name="addCategoryForm" novalidate class="form-horizontal">
+                      <div class="form-group">
+                          <label class="hidden-sm hidden-xs col-md-5 control-label">Category Name
+                              <span class="text-danger">*</span>
+                          </label>
+                          <div class="col-xs-12 col-sm-12 col-md-5">
+                            <input type="text" placeholder="Category Name" name="category_name" class="form-control" ng-model="addCategory.category_name" required>
+                            <div class="error-message padding-right" ng-show="addCategoryForm.category_name.$invalid && !addCategoryForm.category_name.$pristine">Enter Category Name</div>
+                          </div>
+                      </div>
+
+                      <div ng-hide="addCategory.image_path" class="form-group margin-top">
+                          <label class="hidden-sm hidden-xs col-md-5 control-label">
+                                Upload Image 
+                              <span class="text-danger">*</span>
+                          </label>
+                          <div class="col-xs-12 col-sm-12 col-md-5">
+                            <button class="btn btn-primary" ngf-select="uploadPhoto($file)" accept="image/*">Upload
+                                <span>
+                                    <i style="padding-left:6px;" class="fa fa-cloud-upload"></i>
+                                </span>
+                            </button>
+                        </div>
+                      </div>
+                      <div class="row margin-top" ng-show ="addCategory.image_path">
+                        <div class="hidden-sm hidden-xs col-md-5"></div>
+                        <div class="col-md-7">
+                          <div style="    width: 36%;margin-bottom: 20px;margin-right: 40px;float: left;">
+                            <img height="170" width="170" src="{{addCategory.image_path}}" class="thumb">
+                            <i ng-click="removeChoice(addCategory.image_path)" style="margin-top: 65px;font-size: 27px;cursor:pointer;" class="close pull-right fa fa-times"></i>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group text-right">
+                          <button class="btn btn-success margin-right" type="submit" ng-disabled="addCategoryForm.$invalid || !addCategory.image_path" ng-click="updateCategory(addCategory)">Submit
+                              <span>
+                                  <i style="padding-left:6px;" class="fa fa-upload"></i>
+                              </span>
+                          </button>
+                      </div>
+                  </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

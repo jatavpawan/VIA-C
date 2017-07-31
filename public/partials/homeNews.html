@@ -1,0 +1,42 @@
+<div class="animate">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header card-info card-inverse">
+                    <h3 class="card-title">Home Page News</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="card-block">
+                    <h1 class="text-center" ng-show="newsList.length == 0">No news added</h1>
+                    <div class="row" ng-show="newsList.length != 0">
+                        <div class="col-md-6 text-xs-left" ng-repeat="news in newsList">
+                            <div class="card card-default card-block">
+                              <div class="row">
+                                <div class="col-md-4">
+                                  <img height="170" width="170" style="width:90%;" src="{{ news.images[0] }}"/>
+                                </div>
+                                <div class="col-md-8">
+                                  <blockquote class="card-blockquote">
+                                  <h4 class="text-default">{{ news.news_heading }}</h4>
+                                      <p>Posted On : {{ news.date | date:'medium' }}</p>
+                                      <p>Priority : {{ news.news_priority }}</p>
+                                      <a ui-sref="app.newsDetail({newsObj: news})" class="btn btn-primary">View</a>
+                                      <a ng-click="deleteNews(news)" class="btn btn-danger margin-left pull-right">Delete</a>
+                                      <a ui-sref="app.updateNews({newsObj: news})" class="btn btn-success pull-right">Update</a>
+                                  </blockquote>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

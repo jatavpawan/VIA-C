@@ -1,0 +1,107 @@
+<div class="animate">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header card-info card-inverse">
+                    <h3 class="card-title">Update profile</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+
+            <div class="card">
+                <div class="card-block">
+                 <div class="form-group margin-top">
+                          <label class="hidden-sm hidden-xs col-md-5 control-label">
+                                Upload profile Image
+                              <span class="text-danger">*</span>
+                          </label>
+                          <div class="col-xs-12 col-sm-12 col-md-5">
+                              <div class="form-group" style="margin-right:0px;margin-left:0px">
+                                  <img ng-src="{{url_prifix}}{{property.image_url}}" height="100" width="100" />
+                              </div>
+                            <button class="btn btn-primary" ngf-select="uploadPhoto($file)" accept="image/*">Upload
+                                <span>
+                                    <i style="padding-left:6px;" class="fa fa-cloud-upload"></i>
+                                </span>
+                            </button>
+                        </div>
+                      </div>
+                    <form name="updatepropertyForm" novalidate class="form-horizontal">
+                      <div class="form-group">
+                          <label class="hidden-sm hidden-xs col-md-5 control-label">Name
+                              <span class="text-danger">*</span>
+                          </label>
+                          <div class="col-xs-12 col-sm-12 col-md-5">
+                            <input type="text" placeholder="property Name" name="property_name" class="form-control" ng-model="property.property_description_address" required>
+                            <div class="error-message padding-right" ng-show="updatepropertyForm.property_description_address.$invalid && !updatepropertyForm.property_description_address.$pristine">Enter property Name</div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="hidden-sm hidden-xs col-md-5 control-label">Last Name
+                              <span class="text-danger">*</span>
+                          </label>
+                          <div class="col-xs-12 col-sm-12 col-md-5">
+                            <input type="text" placeholder="Address" name="address" class="form-control" ng-model="property.address" required>
+                            <div class="error-message padding-right" ng-show="updatepropertyForm.address.$invalid && !updatepropertyForm.address.$pristine">Enter Address</div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="hidden-sm hidden-xs col-md-5 control-label">Language
+                          </label>
+                          <div class="col-xs-12 col-sm-12 col-md-5">
+                            <input type="text" placeholder="City" name="city" class="form-control" ng-model="property.city">
+                          </div>
+                      </div>
+                        <div class="form-group">
+                            <label class="hidden-sm hidden-xs col-md-5 control-label">
+                                Email
+                            </label>
+                            <div class="col-xs-12 col-sm-12 col-md-5">
+                                <input type="text" placeholder="Strategy City" name="property_strategy_city" class="form-control" ng-model="property.property_strategy_city">
+                            </div>
+                        </div>
+                      <div class="form-group">
+                          <label class="hidden-sm hidden-xs col-md-5 control-label">Current Password
+                          </label>
+                          <div class="col-xs-12 col-sm-12 col-md-5">
+                            <input type="text" placeholder="Province" name="province" class="form-control" ng-model="property.province">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="hidden-sm hidden-xs col-md-5 control-label">New Password
+                          </label>
+                          <div class="col-xs-12 col-sm-12 col-md-5">
+                            <input type="text" placeholder="Beds" name="beds"  class="form-control" ng-model="property.beds">
+                          </div>
+                      </div>
+                     
+                     
+                     
+                     
+                      <!--<div class="row">
+                        <div class="margin-top col-md-offset-2 col-md-3 col-sm-12 col-xs-12" ng-repeat="image_path in property.property_images track by $index">
+                          <div>
+                            <img height="170" width="170" src="{{image_path}}" class="thumb">
+                            <i ng-click="removeChoices($index)" style="margin-top: 65px;font-size: 27px;cursor:pointer;" class="close pull-right fa fa-times"></i>
+                          </div>
+                        </div>
+                      </div>-->
+                       
+                      <div class="form-group">
+                          <button class="btn btn-success margin-right" ng-show="dat.hasData" type="button" ng-click="updateProfile(property)">Update Profile
+                              <span>
+                                  <i style="padding-left:6px;" class="fa fa-upload"></i>
+                              </span>
+                          </button>
+                         
+                      </div>
+                  </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

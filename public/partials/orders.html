@@ -1,0 +1,272 @@
+<style>
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover, .nav-tabs>li>a:focus, .nav-tabs>li>a:hover {
+  color: #fff;
+  background-color: #53B889;
+  font-size: 21px;
+  font-weight: bolder;
+}
+.nav-tabs>li {
+  width: 33%;
+  text-align: center;
+}
+.nav>li>a {
+  color: #53B889;
+}
+.nav-tabs>li>a {
+  font-size: 21px;
+  font-weight: bolder;
+}
+.checkbox-custom, .radio-custom {
+    opacity: 0;
+    position: absolute;   
+}
+
+.checkbox-custom, .checkbox-custom-label, .radio-custom, .radio-custom-label {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.checkbox-custom-label, .radio-custom-label {
+    position: relative;
+}
+
+.checkbox-custom + .checkbox-custom-label:before, .radio-custom + .radio-custom-label:before {
+    content: '';
+    background: #fff;
+    border: 2px solid #ddd;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.checkbox-custom:checked + .checkbox-custom-label:before {
+    background: #62D7D8;
+    border: 2px solid #62D7D8;
+    box-shadow: inset 0px 0px 0px 4px #fff;
+}
+
+.radio-custom + .radio-custom-label:before {
+    border-radius: 50%;
+}
+
+.radio-custom:checked + .radio-custom-label:before {
+    background: #62D7D8;
+    box-shadow: inset 0px 0px 0px 4px #fff;
+}
+
+
+.checkbox-custom:focus + .checkbox-custom-label, .radio-custom:focus + .radio-custom-label {
+  /*outline: 1px solid #62D7D8; /* focus style */*/
+}
+</style>
+
+<div class="animate" ng-show="page=='main'" >
+  <div class="row">
+      <div class="col-sm-12">
+          <div class="card">
+              <div class="card-header card-info card-inverse">
+                  <h3 class="card-title" style="text-align:center;font-size:20px">Users</h3>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!--<div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 16px;padding-right: 36px;">
+          <div class="">
+              <button class="btn btn-success pull-right" ng-click="page='filter'">Filter
+                            <span>
+                                <i style="padding-left:6px;" class="fa fa-filter"></i>
+                            </span>
+                        </button>
+          </div>
+      </div>
+  </div>-->
+  
+
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="card-block">
+          <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                  <table class="table table-bordered table-striped table-hover">
+                      <thead>
+                          <tr class="text-xs-center">
+                              <th class="text-xs-center prod-id">Id</th>
+                             <!--  <th class="text-xs-center">Photo</th> -->
+                              <th class="text-xs-center">First Name</th>
+                              <th class="text-xs-center">Last Name</th>
+                              <th class="text-xs-center">Email</th>
+                              <th class="text-xs-center" ng-init="reverse=true">Country</th>
+                             <!--  <th class="text-xs-center prod-karma prod-word-wrp" ng-click="givenValue='KarmaPoints';reverse=!reverse">KarmaPoints <span> <input type="button" value="↓↑" ></span></th>
+                              <th class="text-xs-center prod-word-wrp prod-wid-rec" ng-click="givenValue='RecommendationCount';reverse=!reverse">Recommendation <span> <input type="button" value="↓↑" ></span></th>
+                              <th class="text-xs-center prod-word-wrp prod-wid" ng-click="givenValue='CreatedTasksCount';reverse=!reverse">CreatedTasks <span> <input type="button" value="↓↑" ></span></th>
+                              <th class="text-xs-center prod-word-wrp prod-wid" ng-click="givenValue='AppliedTasksCount';reverse=!reverse">AppliedTasks <span> <input type="button" value="↓↑" ></span></th>
+                              <th class="text-xs-center prod-word-wrp pro-appl-tsk" ng-click="givenValue='CompletedAppliedTasksCount';reverse=!reverse">Completed AppliedTasks <span> <input type="button" value="↓↑" ></span></th> -->
+                              <th class="text-xs-center" style=" width: 4%;">Status</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                      <tr ng-repeat="users in data track by $index" >
+                        
+                          <td class="text-xs-center prod-word-wrp prod-id">{{users._id }}</td>
+                         <!--  <td class="text-xs-center" ><img ng-src="{{url+user.image_url}}" width="100" height="100" /></td> -->
+                          <td class="text-xs-center">{{users.first_name}}</td>
+                          <td class="text-xs-center" >{{users.last_name}}</td>
+                          <td class="text-xs-center">{{users.email}}</td>
+                          <td class="text-xs-center" >{{users.country}}</td>
+                         
+                          <!-- <td class="text-xs-center">{{user.KarmaPoints}}</td>
+                          <td class="text-xs-center">{{getCountOfKey("Recommendation",user)}}</td>
+                          <td class="text-xs-center">{{getCountOfKey("CreatedTasks",user)}}</td>
+                          <td class="text-xs-center">{{getCountOfKey('AppliedTasks',user)}}</td>
+                          <td class="text-xs-center prod-wid">{{getCountOfKey('CompletedAppliedTasks',user)}}</td> -->
+                          <td> 
+                      <div class="col-md-12 col-lg-12 col-sm-12 colr-grey">
+                        <div>
+                            <input id="radio-1" class="radio-custom" name="{{users.key}}" value="ACTIVE" ng-model="users.status"  type="radio">
+                            <label  for="radio-1" ng-click="setStatus('Active',users)" class="radio-custom-label">&nbsp Active</label>
+                        </div>
+                        <div>
+                            <input id="radio-2" class="radio-custom" name="{{users.key}}" value="INACTIVE" ng-model="users.status"  type="radio">
+                            <label  for="radio-2" ng-click="setStatus('InActive',users)" class="radio-custom-label">&nbsp InActive</label>
+                        </div>
+                      </div>
+                    </td>
+                  <!--  <td><i ng-click="deleteOrder(order)" class="fa fa-times cursor-pointer text-danger"></i></td>-->
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="animate" ng-show="page=='filter'">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header card-info card-inverse">
+                    <h3 class="card-title">Filter</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" >
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="card-block">
+                    <form name="filterForm" novalidate class="form-horizontal">
+                        <div class="form-group">
+                            <label class="hidden-sm hidden-xs col-md-5 control-label">
+                                User Id
+                            </label>
+                            <div class="col-xs-12 col-sm-12 col-md-5">
+                                <input type="text" placeholder="User Id" name="product_name" class="form-control" ng-model="filter.key">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="hidden-sm hidden-xs col-md-5 control-label">
+                                Name
+                            </label>
+                            <div class="col-xs-12 col-sm-12 col-md-5">
+                                <input type="text" placeholder="Name" name="min_price" class="form-control" ng-model="filter.Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="hidden-sm hidden-xs col-md-5 control-label">
+                                Status
+                            </label>
+                            <div class="col-xs-12 col-sm-12 col-md-5">
+                               <!-- <input type="number" placeholder="Status" name="max_price" class="form-control" ng-model="filter.AccountStatus">-->
+                                <div>
+                                    <input id="radio-1" class="radio-custom" name="status" value="Active" ng-model="filter.AccountStatus" type="radio">
+                                    <label for="radio-1" ng-click="filter.AccountStatus='Active'" class="radio-custom-label">&nbsp Active</label>
+                                </div>
+                                <div>
+                                    <input id="radio-2" class="radio-custom" name="Status" value="InActive" ng-model="filter.AccountStatus" type="radio">
+                                    <label for="radio-2" ng-click="filter.AccountStatus='InActive'" class="radio-custom-label">&nbsp InActive</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="hidden-sm hidden-xs col-md-5 control-label">
+                                Location
+                            </label>
+                            <div class="col-xs-12 col-sm-12 col-md-5">
+                                <select ng-model="filter.location" class="form-control">
+                                    <option ng-repeat="loc in locations" value="{{loc}}">
+                                        {{loc}}
+                                    </option>
+                                </select>
+                                
+                            </div>
+                        </div>
+                        <!--<div class="form-group">
+                            <label class="hidden-sm hidden-xs col-md-5 control-label">
+                                Karma Points (less than)
+                            </label>
+                            <div class="col-xs-12 col-sm-12 col-md-5">
+                                <input type="number" placeholder="Karma Points" name="product_id" class="form-control" ng-model="givenValue">
+                            </div>
+                        </div>-->
+                        <!--<div class="form-group">
+                            <label class="hidden-sm hidden-xs col-md-5 control-label">
+                                Recommendation
+                            </label>
+                            <div class="col-xs-12 col-sm-12 col-md-5">
+                                <input type="number" placeholder="Recommendation" name="min_price" class="form-control" ng-model="filter.RecommendationCount">
+                            </div>
+                        </div>-->
+                        <!--<div class="form-group">
+                            <label class="hidden-sm hidden-xs col-md-5 control-label">
+                                Created Task
+                            </label>
+                            <div class="col-xs-12 col-sm-12 col-md-5">
+                                <input type="number" placeholder="Created Task" name="max_price" class="form-control" ng-model="filter.CreatedTasksCount">
+                            </div>
+                        </div>-->
+                        <!--<div class="form-group">
+                            <label class="hidden-sm hidden-xs col-md-5 control-label">
+                                Applied Task
+                            </label>
+                            <div class="col-xs-12 col-sm-12 col-md-5">
+                                <input type="number" placeholder="Applied Task" name="product_id" class="form-control" ng-model="filter.AppliedTasksCount">
+                            </div>
+                        </div>-->
+                        <!--<div class="form-group">
+                            <label class="hidden-sm hidden-xs col-md-5 control-label">
+                                Completed Task
+                            </label>
+                            <div class="col-xs-12 col-sm-12 col-md-5">
+                                <input type="number" placeholder="Completed Task" name="product_id" class="form-control" ng-model="filter.CompletedAppliedTasksCount">
+                            </div>
+                        </div>-->
+                        <div class="form-group text-right">
+                            <button class="btn btn-success margin-right" type="button" ng-click="page='main'">
+                                Filter
+                                <span>
+                                    <i style="padding-left:6px;" class="fa fa-filter"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
