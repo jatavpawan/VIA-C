@@ -1,3 +1,4 @@
+
  
 var express     = require('express');
 var app         = express();
@@ -98,8 +99,12 @@ app.post('/api/uploadPhotos', function(req, res) {
 
 });
 
+//app.get('/', function(req, res) {
+//    res.sendfile('public/homepage/index.html');
+//});
+
 app.get('/', function(req, res) {
-    res.sendfile('public/homepage/index.html');
+    res.sendfile('public/app/templates/homepage.html');
 });
 
 app.get('/app', function(req, res) {
