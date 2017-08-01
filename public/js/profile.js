@@ -1,19 +1,35 @@
 angular.module('profile.controllers', [])
 
 .controller('profileController', function ($scope, $state, APIService,Upload) {
-	$scope.data={};
+
+	$scope.profile=JSON.parse(localStorage.getItem('userDetails'));
+console.log($scope.profile)
+$scope.url_prifix=url_prifix;
 
 
-
- $scope.updateProfile=function(data){
- 	//alert(data)
+ $scope.updateProfile=function(){
+ //	alert($scope.profile.passwordTemp==$scope.profile.password)
+  if($scope.profile.passwordTemp!=$scope.profile.password){
+    alert("Current password is incorrect");
+    return null;
+  }
+  if($scope.profile.confirm_new_password!=$scope.profile.new_password){
+alert("New password and confirm password do not match");
+    return null;
+  }
  	var obj={};
- 	obj.req_url=url_prifix+'updateUser';
- 	obj.data=data;
-APIService.setData(obj).then(function(res){
+  if($scope.profile.new_password){
+$scope.profile.password=$scope.profile.new_password;    
+  }
+  
+ 	obj.req_url=url_prifix+'api/updateUser';
+ 	obj.data=$scope.profile;
+APIService.updateData(obj).then(function(res){
 //alert(res);	
+alert("your profile updated successfully");
+localStorage.setItem("userDetails",JSON.stringify(res.data))
 console.log(res);
-$state.go('app.product')
+$state.go('app.profile')
 })
  }
 

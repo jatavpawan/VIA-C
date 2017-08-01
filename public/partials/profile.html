@@ -14,14 +14,11 @@
 
             <div class="card">
                 <div class="card-block">
-                 <div class="form-group margin-top">
-                          <label class="hidden-sm hidden-xs col-md-5 control-label">
-                                Upload profile Image
-                              <span class="text-danger">*</span>
-                          </label>
-                          <div class="col-xs-12 col-sm-12 col-md-5">
-                              <div class="form-group" style="margin-right:0px;margin-left:0px">
-                                  <img ng-src="{{url_prifix}}{{property.image_url}}" height="100" width="100" />
+                 <div style="height: 200px">
+                         
+                          <div class="" style="text-align: center;">
+                              <div class="" style="margin-right:0px;margin-left:0px">
+                                  <img ng-src="{{url_prifix}}{{profile.photo_url}}" height="200" width="200" />
                               </div>
                             <button class="btn btn-primary" ngf-select="uploadPhoto($file)" accept="image/*">Upload
                                 <span>
@@ -30,14 +27,17 @@
                             </button>
                         </div>
                       </div>
+                      <br>
+                      <br>
                     <form name="updatepropertyForm" novalidate class="form-horizontal">
                       <div class="form-group">
                           <label class="hidden-sm hidden-xs col-md-5 control-label">Name
                               <span class="text-danger">*</span>
                           </label>
                           <div class="col-xs-12 col-sm-12 col-md-5">
-                            <input type="text" placeholder="property Name" name="property_name" class="form-control" ng-model="property.property_description_address" required>
-                            <div class="error-message padding-right" ng-show="updatepropertyForm.property_description_address.$invalid && !updatepropertyForm.property_description_address.$pristine">Enter property Name</div>
+
+                            <input type="text" placeholder=" Name" name="property_name" class="form-control" ng-model="profile.first_name" required>
+                            <div class="error-message padding-right" ng-show="updatepropertyForm.property_description_address.$invalid && !updatepropertyForm.property_description_address.$pristine">Enter Name</div>
                           </div>
                       </div>
                       <div class="form-group">
@@ -45,15 +45,19 @@
                               <span class="text-danger">*</span>
                           </label>
                           <div class="col-xs-12 col-sm-12 col-md-5">
-                            <input type="text" placeholder="Address" name="address" class="form-control" ng-model="property.address" required>
-                            <div class="error-message padding-right" ng-show="updatepropertyForm.address.$invalid && !updatepropertyForm.address.$pristine">Enter Address</div>
+                            <input type="text" placeholder="Last Name" name="address" class="form-control" ng-model="profile.last_name" required>
+                            <div class="error-message padding-right" ng-show="updatepropertyForm.address.$invalid && !updatepropertyForm.address.$pristine">Enter Last Name</div>
                           </div>
                       </div>
                       <div class="form-group">
                           <label class="hidden-sm hidden-xs col-md-5 control-label">Language
                           </label>
                           <div class="col-xs-12 col-sm-12 col-md-5">
-                            <input type="text" placeholder="City" name="city" class="form-control" ng-model="property.city">
+                            <select class="form-control" ng-model="profile.language">
+
+                              <option value="English">English</option>
+                              <option value="Spanish">Spanish</option>
+                            </select>
                           </div>
                       </div>
                         <div class="form-group">
@@ -61,25 +65,43 @@
                                 Email
                             </label>
                             <div class="col-xs-12 col-sm-12 col-md-5">
-                                <input type="text" placeholder="Strategy City" name="property_strategy_city" class="form-control" ng-model="property.property_strategy_city">
+                                <input type="email" placeholder="Email" name="profile.email" class="form-control" ng-model="profile.email">
                             </div>
                         </div>
+                        <br>
+                        <hr>
+                       
+                        <h4 style="text-align: center">Password</h4>
+                        <br>
                       <div class="form-group">
                           <label class="hidden-sm hidden-xs col-md-5 control-label">Current Password
                           </label>
                           <div class="col-xs-12 col-sm-12 col-md-5">
-                            <input type="text" placeholder="Province" name="province" class="form-control" ng-model="property.province">
+                            <input type="Password" placeholder="Current Password" name="province" class="form-control" ng-model="profile.passwordTemp">
                           </div>
                       </div>
                       <div class="form-group">
                           <label class="hidden-sm hidden-xs col-md-5 control-label">New Password
                           </label>
                           <div class="col-xs-12 col-sm-12 col-md-5">
-                            <input type="text" placeholder="Beds" name="beds"  class="form-control" ng-model="property.beds">
+                            <input type="Password" placeholder="New Password"   class="form-control" ng-model="profile.new_password">
+                          </div>
+                      </div>
+                       <div class="form-group">
+                          <label class="hidden-sm hidden-xs col-md-5 control-label">New Password
+                          </label>
+                          <div class="col-xs-12 col-sm-12 col-md-5">
+                            <input type="Password" placeholder="New Password"   class="form-control" ng-model="profile.confirm_new_password">
                           </div>
                       </div>
                      
-                     
+                     <div style="text-align: center;">
+                     <button class="btn btn-primary" ng-click="updateProfile()">Update
+                                <span>
+                                    <i style="padding-left:6px;" class="fa"></i>
+                                </span>
+                            </button>
+                     </div>
                      
                      
                       <!--<div class="row">

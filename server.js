@@ -11,8 +11,6 @@ var nodemailer = require('nodemailer');
 var jwt    = require('jsonwebtoken');
 var pdf = require('html-pdf');
 var fs = require('fs');
-var html = fs.readFileSync('./public/templates/chat-detail.html', 'utf8');
-
 var config = require('./config');
 var User   = require('./app/models/user');
 var Property   = require('./app/models/property');
@@ -48,8 +46,8 @@ app.use(function(req, res, next) { //allow cross origin requests
 var transport = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-      user: "growthpoolagreements@gmail.com",
-      pass: "GPTech123"
+      user: "sachin.patidar4@gmail.com",
+      pass: "*******"   //put your password and mail id
     }
 });
 
@@ -258,7 +256,7 @@ app.post('/forgotPassword', function(req, res) {
             return res.json({"message":"Email is not registered."});
         } else {
             var msg = {
-              html: "<b>Hello!</b><p>Your password for GP account is <strong>" + user.password + "</strong</p>.",
+              html: "<b>Hello!</b><p>Your password for VIA-C account is <strong>" + user.password + "</strong</p>.",
               createTextFromHtml: true,
               from: '"GrowthPool" <growthpoolagreements@gmail.com>',
               to: forgot_email,
@@ -378,9 +376,7 @@ app.post('/authenticate', function(req, res) {
             if (user.password != req.body.password) {
               res.json({ success: false, message: 'Authentication failed. Wrong password.' });
             } 
-            else if (user.status != 'ACTIVE') {
-              res.json({ success: false, message: 'Please verify your email.' });
-            }
+            
             else {
               var token = jwt.sign(user, app.get('superSecret'), {
                 expiresIn: 86400*30
@@ -713,7 +709,3 @@ app.listen(port);
 console.log('Running at ' + port);
 var options = { format: 'Letter' };
 
-pdf.create(html, options).toFile('./businesscard.pdf', function (err, res) {
-    if (err) return console.log(err);
-    console.log(res); // { filename: '/app/businesscard.pdf' } 
-});

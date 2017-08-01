@@ -9,10 +9,16 @@ angular.module('login.controllers', [])
       }).then(function(resp) {
         //  $scope.message = resp.data.message;
          // if($scope.message == 'success') {
-          localStorage.setItem('userDetails',resp.data)
+          if(resp.data.user){
+          localStorage.setItem('userDetails',JSON.stringify(resp.data.user))
               localStorage.setItem('isLoggedIn', 'success');
-              localStorage.setItem('token', resp.data.token);
-            $state.go('app.product');
+              localStorage.setItem('token',resp.data.token);
+    //          localStorage.setItem('token', resp.data.token);
+            $state.go('app.profile');  
+          }else{
+            alert(resp.data.message)
+          }
+          
          // }
          },function(resp) {
             // This block execute in case of error.
@@ -24,7 +30,8 @@ angular.module('login.controllers', [])
           data: {email : user.email}
       }).then(function(resp) {
           $scope.forgotMessage = resp.data.successMessage;
-
+          alert("Your password is sent on your mail id")
+$scope.forgotPass=false;
          },function(resp) {
             // This block execute in case of error.
             $scope.forgotMessage = "Unable to send password. Please try again.";

@@ -9,5 +9,7 @@ module.exports = mongoose.model('User', new Schema({
     email: String,
     password: String,
     status: { type: String, default: 'INACTIVE' },
-    country: String
+    country: String,
+    language:String,
+    photo_url:String
 }));

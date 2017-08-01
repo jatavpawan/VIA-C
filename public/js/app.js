@@ -1,5 +1,5 @@
 // EazyBiz App
- var url_prifix = 'http://localhost:8084/';
+ var url_prifix = 'http://localhost:8082/';
 //var url_prifix = 'http://192.168.0.4:80/';
 angular.module('ratlamBazar', ['ui.router', 'authModule','signUp.controllers','profile.controllers', 'app.controllers', 'product.controllers', 'updateProduct.controllers', 'productDetail.controllers', 'filter.controllers', 'ngLoadingSpinner', 'ngDialog', 'login.controllers', 'orders.controllers', 'requestServices.controllers', 'feedback.controllers', '720kb.datepicker' , 'userinvestment.controllers'])
 
